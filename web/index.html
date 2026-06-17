@@ -1,27 +1,62 @@
 <!doctype html>
+<!--
+  Golf Scores - index.html
+
+  Purpose:
+  - Minimal single-page UI for adding and viewing golf rounds (date, course, holes, score).
+  - Connects to `styles.css` for styling and `app.js` for behavior and persistence.
+
+  How it works:
+  - The form section contains inputs with specific `id` attributes referenced by `app.js`:
+      - `date` (type=date)
+      - `course` (text)
+      - `holes` (number)
+      - `score` (number)
+      - `add` (button) triggers adding a round
+  - Rounds are rendered into the `<ul id="rounds">` element by `app.js` and stored in `localStorage`.
+
+  Notes for maintainers:
+  - Keep the `id` attributes in sync with `web/app.js`.
+  - To serve locally use: `python3 -m http.server 8000 --directory web`.
+-->
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Golf Scores</title>
+  <!-- Stylesheet for layout and visual styles -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Main client logic: handles adding, rendering, and persisting rounds -->
   <script defer src="app.js"></script>
 </head>
 <body>
   <div class="container">
+    <!-- App header: title and short description -->
     <header>
       <h1>Golf Scores</h1>
       <p>Track date, course, holes, and score</p>
     </header>
 
+    <!-- Input form: controlled by IDs used in `app.js` -->
     <section class="form">
+      <!-- Date picker for the round date -->
       <label>Date <input type="date" id="date"></label>
+
+      <!-- Course name (required by the JS saver) -->
       <label>Course <input id="course" placeholder="Course name"></label>
+
+      <!-- Number of holes played (1-36) -->
       <label>Holes <input id="holes" type="number" min="1" max="36" value="18"></label>
+
+      <!-- Total score for the round -->
       <label>Score <input id="score" type="number" min="1" max="200" value="72"></label>
+
+      <!-- Add button: clicks are handled by `app.js` to create a round -->
       <button id="add">Add Round</button>
     </section>
 
+    <!-- Rounds list: populated dynamically by `app.js` -->
     <section>
       <h2>Rounds</h2>
       <ul id="rounds" class="round-list"></ul>
