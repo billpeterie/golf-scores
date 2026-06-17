@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Golf Scores</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Golf Scores</h1>
+      <p>Track date, course, holes, and score</p>
+    </header>
+
+    <section class="form">
+      <label>Date <input type="date" id="date"></label>
+      <label>Course <input id="course" placeholder="Course name"></label>
+      <label>Holes <input id="holes" type="number" min="1" max="36" value="18"></label>
+      <label>Score <input id="score" type="number" min="1" max="200" value="72"></label>
+      <button id="add">Add Round</button>
+    </section>
+
+    <section>
+      <h2>Rounds</h2>
+      <ul id="rounds" class="round-list"></ul>
+    </section>
+  </div>
+</body>
+</html>
