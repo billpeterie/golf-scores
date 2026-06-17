@@ -1,0 +1,24 @@
+// Begin editing the project.pbxproj file to add a new XCTest target
+
+/* Begin PBXProject section */
+...
+		/* Begin new XCTest target */
+		7D1A2B3C4E5F6G7H8I9J0 = {
+			isa = PBXNativeTarget;
+			name = "GolfScoresAppTests";
+			productName = "GolfScoresAppTests";
+			productReference = 7D1A2B3C4E5F6G7H8I9J0;
+			productType = "com.apple.product-type.bundle.unit-test";
+			buildConfigurationList = 7D1A2B3C4E5F6G7H8I9J0;
+			...
+			/* Add source files */
+			sources = (
+				7D1A2B3C4E5F6G7H8I9J0,
+			);
+			...
+		};
+		/* End new XCTest target */
+...
+/* End PBXProject section */
+
+// Ensure to add the new target to the appropriate build configurations and link any necessary frameworks.

@@ -1,0 +1,8 @@
+import XCTest
+@testable import GolfScores
+
+class GolfScoresAppTests: XCTestCase {
+    func testHelloWorld() {
+        XCTAssertEqual("Hello, World!", "Hello, World!")
+    }
+}
